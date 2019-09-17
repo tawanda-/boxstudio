@@ -1,0 +1,12 @@
+TODO
+1. Add fragments to main activity
+    1.1 Profile
+    1.2 Booking
+    1.3 Schedule
+    1.4 Contact Us
+2. Setup retrofit
+3. Setup sqlite
+4. Profile UI
+5. Booking UI
+6. Schedule UI
+7. Contact Us UI
