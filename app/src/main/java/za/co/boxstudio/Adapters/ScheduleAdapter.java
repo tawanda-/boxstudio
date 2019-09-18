@@ -27,13 +27,18 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
         public final View mView;
 
-        TextView txtTitle;
+        TextView line1;
+        TextView line2;
+        TextView line3;
+
 
         ScheduleViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
 
-            txtTitle = mView.findViewById(R.id.schedule_row_title);
+            line1 = mView.findViewById(R.id.item_line_1);
+            line2 = mView.findViewById(R.id.item_line_2);
+            line3 = mView.findViewById(R.id.item_line_3);
         }
     }
 
@@ -46,7 +51,10 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
     @Override
     public void onBindViewHolder(ScheduleViewHolder holder, int position) {
-        holder.txtTitle.setText(dataList.get(position).getActivity().getName());
+        holder.line1.setText(dataList.get(position).getActivity().getName());
+        holder.line2.setText(dataList.get(position).getInstructor().getName()+" "+dataList.get(position).getInstructor().getSurname());
+        holder.line3.setText(dataList.get(position).getStartTime()+" - "+dataList.get(position).getEndTime());
+
     }
 
     @Override

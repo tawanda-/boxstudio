@@ -26,4 +26,5 @@
     <string name="title_schedule_fragment">Schedule</string>
     <string name="title_contact_us_fragment">Contact Us</string>
     <string name="title_booking_fragment">Bookings</string>
+    <string name="box_logo">Logo</string>
 </resources>
