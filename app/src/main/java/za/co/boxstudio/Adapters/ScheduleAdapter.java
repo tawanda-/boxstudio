@@ -46,7 +46,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
     @Override
     public void onBindViewHolder(ScheduleViewHolder holder, int position) {
-        holder.txtTitle.setText(dataList.get(position).getStaffID());
+        holder.txtTitle.setText(dataList.get(position).getActivity().getName());
     }
 
     @Override

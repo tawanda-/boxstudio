@@ -5,99 +5,39 @@ import com.google.gson.annotations.SerializedName;
 
 public class Schedule {
 
-    @SerializedName("instNo")
+    @SerializedName("id")
     @Expose
-    public Integer instNo;
-    @SerializedName("scheduleID")
+    public String id;
+    @SerializedName("venue")
     @Expose
-    public String scheduleID;
-    @SerializedName("staffID")
-    @Expose
-    public String staffID;
-    @SerializedName("actvityID")
-    @Expose
-    public String actvityID;
-    @SerializedName("FacilityNum")
-    @Expose
-    public String facilityNum;
-    @SerializedName("scheduleDay")
-    @Expose
-    public String scheduleDay;
-    @SerializedName("scheduleTime")
-    @Expose
-    public String scheduleTime;
-    @SerializedName("ScheduleEndTime")
-    @Expose
-    public String scheduleEndTime;
-    @SerializedName("startTime")
+    public Venue venue;
+    @SerializedName("start_time")
     @Expose
     public String startTime;
-    @SerializedName("endTime")
+    @SerializedName("end_time")
     @Expose
     public String endTime;
+    @SerializedName("instructor")
+    @Expose
+    public Instructor instructor;
+    @SerializedName("activity")
+    @Expose
+    public Activity activity;
 
-    public Integer getInstNo() {
-        return instNo;
+    public String getId() {
+        return id;
     }
 
-    public void setInstNo(Integer instNo) {
-        this.instNo = instNo;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getScheduleID() {
-        return scheduleID;
+    public Venue getVenue() {
+        return venue;
     }
 
-    public void setScheduleID(String scheduleID) {
-        this.scheduleID = scheduleID;
-    }
-
-    public String getStaffID() {
-        return staffID;
-    }
-
-    public void setStaffID(String staffID) {
-        this.staffID = staffID;
-    }
-
-    public String getActvityID() {
-        return actvityID;
-    }
-
-    public void setActvityID(String actvityID) {
-        this.actvityID = actvityID;
-    }
-
-    public String getFacilityNum() {
-        return facilityNum;
-    }
-
-    public void setFacilityNum(String facilityNum) {
-        this.facilityNum = facilityNum;
-    }
-
-    public String getScheduleDay() {
-        return scheduleDay;
-    }
-
-    public void setScheduleDay(String scheduleDay) {
-        this.scheduleDay = scheduleDay;
-    }
-
-    public String getScheduleTime() {
-        return scheduleTime;
-    }
-
-    public void setScheduleTime(String scheduleTime) {
-        this.scheduleTime = scheduleTime;
-    }
-
-    public String getScheduleEndTime() {
-        return scheduleEndTime;
-    }
-
-    public void setScheduleEndTime(String scheduleEndTime) {
-        this.scheduleEndTime = scheduleEndTime;
+    public void setVenue(Venue venue) {
+        this.venue = venue;
     }
 
     public String getStartTime() {
@@ -114,5 +54,21 @@ public class Schedule {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
+    public Activity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 }
