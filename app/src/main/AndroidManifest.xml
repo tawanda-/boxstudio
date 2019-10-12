@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="za.co.boxstudio">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:fullBackupContent="false"
@@ -13,17 +11,44 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="za.co.boxstudio.ui.activities.HomeActivity"
-            android:launchMode="singleTop"
+            android:name=".ui.activities.AboutUsActivity"
+            android:label="@string/title_activity_about_us"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.activities.BookingActivity"
+            android:label="@string/title_activity_booking"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.Schedule"
+            android:label="@string/title_activity_schedule"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".ui.activities.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="za.co.boxstudio.ui.activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".ui.activities.LauncherActivity"
-            android:label="@string/title_activity_launcher"
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="za.co.boxstudio.ui.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activities.HomeActivity"
+            android:launchMode="singleTop"
+            android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +57,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activities.LauncherActivity"
+            android:label="@string/title_activity_launcher"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <uses-library android:name="com.google.android.maps" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

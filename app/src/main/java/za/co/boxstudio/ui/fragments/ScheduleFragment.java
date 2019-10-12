@@ -90,10 +90,10 @@ public class ScheduleFragment extends Fragment {
 
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-        mAdapter = new ScheduleAdapter(getContext(), dataList );
-        recyclerView.setAdapter(mAdapter);
+        //mAdapter = new ScheduleAdapter(getContext(), dataList );
+        //recyclerView.setAdapter(mAdapter);
 
-        updateRecycler();
+        //updateRecycler();
     }
 
     private void updateRecycler(){
@@ -106,7 +106,9 @@ public class ScheduleFragment extends Fragment {
             public void onResponse(Call<List<Schedule>> call, Response<List<Schedule>> response) {
                 Log.d(this.getClass().getSimpleName(), new Gson().toJson(response));
                 dataList = response.body();
-                mAdapter.notifyDataSetChanged();
+                //mAdapter.notifyDataSetChanged();
+                //notifyItemInserted
+                mAdapter.notifyItemRangeInserted(0, dataList.size());
             }
 
             @Override
