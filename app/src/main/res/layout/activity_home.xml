@@ -33,7 +33,7 @@
             android:background="@drawable/shape"
             android:text="@string/action_button_profile"
             android:textAllCaps="false"
-            android:textColor="#FF1744"
+            android:textColor="@color/boxStudioRed"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
             android:background="@drawable/shape"
             android:text="@string/action_button_schedule"
             android:textAllCaps="false"
-            android:textColor="#FF1744"
+            android:textColor="@color/boxStudioRed"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/shape"
             android:text="@string/action_button_booking"
-            android:textColor="#FF1744"
+            android:textColor="@color/boxStudioRed"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -68,7 +68,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/shape"
             android:text="@string/action_button_about_us"
-            android:textColor="#FF1744"
+            android:textColor="@color/boxStudioRed"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold" />
