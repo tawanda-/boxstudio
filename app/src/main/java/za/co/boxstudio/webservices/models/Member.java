@@ -43,7 +43,7 @@ public class Member {
     public String approvalDate;
     @SerializedName("deleted_YN")
     @Expose
-    public Integer deletedYN;
+    public String deletedYN;
     @SerializedName("dateDeleted_D")
     @Expose
     public String dateDeletedD;
@@ -68,7 +68,7 @@ public class Member {
         this.memberDOB = "";
         this.approvedBy = "";
         this.approvalDate = "";
-        this.deletedYN = 0;
+        this.deletedYN = "";
         this.dateDeletedD = "";
         this.deletedByC = "";
     }

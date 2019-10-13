@@ -1,5 +1,6 @@
 package za.co.boxstudio.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -39,11 +40,11 @@ public class RegistrationActivity extends AppCompatActivity {
         final TextView passwordTextView = findViewById(R.id.textViewRegisterPassword);
         final TextView submitButton = findViewById(R.id.buttonRegisterSubmit);
 
-        /*final Member member = new Member(usernameNameTextView.getText().toString(), firstNameTextView.getText().toString(),
-                lastNameTextView.getText().toString(), emailTextView.getText().toString(), passwordTextView.getText().toString());*/
+        final Member member = new Member(usernameNameTextView.getText().toString(), firstNameTextView.getText().toString(),
+                lastNameTextView.getText().toString(), emailTextView.getText().toString(), passwordTextView.getText().toString());
 
-        final Member member = new Member("bond007", "james", "bond",
-                "james@bond.com", "bond");
+        /*final Member member = new Member("bond007", "james", "bond",
+                "james@bond.com", "bond");*/
 
         final Retrofit client = ClientSingleton.getRetrofitInstance();
         final MemberService service = client.create(MemberService.class);
@@ -60,6 +61,8 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<List<Member>> call, Response<List<Member>> response) {
                         Log.d(this.getClass().getSimpleName(), new Gson().toJson(response));
+                        Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
