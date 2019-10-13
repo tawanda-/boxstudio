@@ -86,6 +86,10 @@
     <string name="user_emoji">User emoji</string>
     <string name="box_studio_logo">Box Studio logo</string>
 
+    <string name="box_studio_shared_pref">BoxStudioPref</string>
+    <string name="box_studio_shared_pref_user">BoxStudioLoggedUser</string>
+    <string name="box_studio_shared_pref_user_logged_in">LoggeIn</string>
+
 
 
 

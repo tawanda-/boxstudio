@@ -20,22 +20,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textViewProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="Wiliam Snoe"
             android:textColor="#fff"
             android:textSize="21sp"
             android:textStyle="bold" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <!--de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="45dp"
-            android:src="@drawable/profile_image_2" />
+            android:src="@drawable/profile_image_2" /-->
     </LinearLayout>
 
     <LinearLayout
@@ -51,24 +51,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp">
-            <!--ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/email_black_18dp"/-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:text="Wiliam@gmail.com"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
             android:paddingLeft="25dp">
@@ -77,12 +59,30 @@
                 android:layout_height="36dp"
                 android:src="@drawable/ic_call_black_18dp"/-->
             <TextView
+                android:id="@+id/textViewProfileUsername"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="+266 225 225"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+            <!--ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/email_black_18dp"/-->
+            <TextView
+                android:id="@+id/textViewProfileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Wiliam@gmail.com"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

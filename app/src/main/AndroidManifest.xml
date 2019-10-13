@@ -13,7 +13,7 @@
         <activity
             android:name=".ui.activities.RegistrationActivity"
             android:label="@string/title_activity_registration"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activities.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -28,8 +28,8 @@
         </activity>
         <activity
             android:name=".ui.activities.HomeActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activities.AboutUsActivity"
             android:label="@string/title_activity_about_us"

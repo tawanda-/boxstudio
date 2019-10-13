@@ -1,12 +1,14 @@
 package za.co.boxstudio.ui.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        Boolean isLoggedIn = sharedPref.getBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), false);
+
+        if(isLoggedIn){
+
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+
         setContentView(R.layout.activity_login);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,20 +59,31 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Call<List<Member>> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
-                call.enqueue(new Callback<List<Member>>() {
+                Call<Member> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
+                call.enqueue(new Callback<Member>() {
 
                     @Override
-                    public void onResponse(Call<List<Member>> call, Response<List<Member>> response) {
-                        Log.d(this.getClass().getSimpleName(), new Gson().toJson(response));
+                    public void onResponse(Call<Member> call, Response<Member> response) {
+
+                        Log.d(this.getClass().getSimpleName(), new Gson().toJson(response.body()));
+
+                        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), true);
+                        editor.putString(getString(R.string.box_studio_shared_pref_user), new Gson().toJson(response.body()));
+                        editor.commit();
+
+
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
 
                     @Override
-                    public void onFailure(Call<List<Member>> call, Throwable t) {
+                    public void onFailure(Call<Member> call, Throwable t) {
                         t.printStackTrace();
                     }
                 });
-
             }
         });
 
@@ -69,5 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

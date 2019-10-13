@@ -76,6 +76,11 @@ public class HomeActivity extends AppCompatActivity {
  */
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

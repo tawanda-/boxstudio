@@ -72,4 +72,68 @@ public class Member {
         this.dateDeletedD = "";
         this.deletedByC = "";
     }
+
+    public String getMemberID() {
+        return memberID;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public String getMemberSurname() {
+        return memberSurname;
+    }
+
+    public String getMembershipID() {
+        return membershipID;
+    }
+
+    public String getMemberContact() {
+        return memberContact;
+    }
+
+    public String getMemberEmail() {
+        return memberEmail;
+    }
+
+    public String getMemberAddress() {
+        return memberAddress;
+    }
+
+    public String getMemberGender() {
+        return memberGender;
+    }
+
+    public String getApprovedYN() {
+        return approvedYN;
+    }
+
+    public String getMemberDOB() {
+        return memberDOB;
+    }
+
+    public String getApprovedBy() {
+        return approvedBy;
+    }
+
+    public String getApprovalDate() {
+        return approvalDate;
+    }
+
+    public String getDeletedYN() {
+        return deletedYN;
+    }
+
+    public String getDateDeletedD() {
+        return dateDeletedD;
+    }
+
+    public String getDeletedByC() {
+        return deletedByC;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
