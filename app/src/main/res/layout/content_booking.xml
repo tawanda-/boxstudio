@@ -8,12 +8,10 @@
     tools:context=".ui.activities.BookingActivity"
     tools:showIn="@layout/activity_booking">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/graylight"
         android:orientation="vertical">
 
         <TextView
