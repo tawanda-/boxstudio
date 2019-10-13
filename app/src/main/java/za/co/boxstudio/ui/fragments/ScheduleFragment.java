@@ -1,35 +1,13 @@
 package za.co.boxstudio.ui.fragments;
 
 
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import za.co.boxstudio.Adapters.ScheduleAdapter;
-import za.co.boxstudio.R;
-import za.co.boxstudio.Webservices.ClientSingleton;
-import za.co.boxstudio.Webservices.models.Schedule;
-import za.co.boxstudio.Webservices.services.ScheduleService;
+import za.co.boxstudio.webservices.models.Schedule;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,7 +27,7 @@ public class ScheduleFragment extends Fragment {
     public ScheduleFragment() {
         // Required empty public constructor
     }
-
+/*
     public static ScheduleFragment newInstance(int position) {
         ScheduleFragment f = new ScheduleFragment();
         Bundle b = new Bundle();
@@ -117,4 +95,5 @@ public class ScheduleFragment extends Fragment {
             }
         });
     }
+    */
 }

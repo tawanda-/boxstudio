@@ -11,6 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.activities.RegistrationActivity"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.HomeActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".ui.activities.AboutUsActivity"
             android:label="@string/title_activity_about_us"
             android:theme="@style/AppTheme.NoActionBar">
@@ -29,16 +49,11 @@
         <activity
             android:name=".ui.activities.ScheduleActivity"
             android:label="@string/title_activity_schedule"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.boxstudio.ui.activities.HomeActivity" />
         </activity>
-        <activity
-            android:name=".ui.activities.LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.ProfileActivity"
             android:label="@string/title_activity_profile"
@@ -56,16 +71,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.boxstudio.ui.activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".ui.activities.HomeActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activities.LauncherActivity"

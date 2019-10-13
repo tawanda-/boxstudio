@@ -1,8 +1,9 @@
 package za.co.boxstudio.ui.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,28 +25,36 @@ import za.co.boxstudio.webservices.ClientSingleton;
 import za.co.boxstudio.webservices.models.Member;
 import za.co.boxstudio.webservices.services.MemberService;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_registration);
 
-        final Button loginButton = findViewById(R.id.buttonLoginSubmit);
-        final Button registerButton = findViewById(R.id.buttonRegister);
-        final TextView emailTextView = findViewById(R.id.textViewLoginEmail);
-        final TextView passwordTextView = findViewById(R.id.textViewLoginPassword);
+        final TextView firstNameTextView = findViewById(R.id.textViewRegisterFirstName);
+        final TextView lastNameTextView = findViewById(R.id.textViewRegisterLastName);
+        final TextView usernameNameTextView = findViewById(R.id.textViewRegisterUsername);
+        final TextView emailTextView = findViewById(R.id.textViewRegisterEmail);
+        final TextView passwordTextView = findViewById(R.id.textViewRegisterPassword);
+        final TextView submitButton = findViewById(R.id.buttonRegisterSubmit);
+
+        /*final Member member = new Member(usernameNameTextView.getText().toString(), firstNameTextView.getText().toString(),
+                lastNameTextView.getText().toString(), emailTextView.getText().toString(), passwordTextView.getText().toString());*/
+
+        final Member member = new Member("bond007", "james", "bond",
+                "james@bond.com", "bond");
 
         final Retrofit client = ClientSingleton.getRetrofitInstance();
         final MemberService service = client.create(MemberService.class);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        Log.d(this.getClass().getSimpleName(), new Gson().toJson(member));
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Call<List<Member>> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
+                Call<List<Member>> call = service.register(member);
                 call.enqueue(new Callback<List<Member>>() {
 
                     @Override
@@ -59,14 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-            }
-        });
-
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-                startActivity(intent);
             }
         });
     }

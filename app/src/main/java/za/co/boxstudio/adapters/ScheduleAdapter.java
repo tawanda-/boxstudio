@@ -1,4 +1,4 @@
-package za.co.boxstudio.Adapters;
+package za.co.boxstudio.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,13 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListUpdateCallback;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 import za.co.boxstudio.R;
-import za.co.boxstudio.Webservices.models.Schedule;
+import za.co.boxstudio.webservices.models.Schedule;
 
 public class ScheduleAdapter extends PagedListAdapter<Schedule, ScheduleAdapter.ScheduleViewHolder> {
 

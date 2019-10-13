@@ -1,4 +1,4 @@
-package za.co.boxstudio.Webservices.models;
+package za.co.boxstudio.webservices.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
