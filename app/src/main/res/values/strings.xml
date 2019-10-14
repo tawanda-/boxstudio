@@ -67,6 +67,8 @@
     <string name="action_button_schedule">Schedule</string>
     <string name="action_button_booking">Bookings</string>
     <string name="action_button_about_us">About Us</string>
+    <string name="action_button_logout">Logout</string>
+
     <string name="title_activity_schedule">Schedule</string>
     <string name="title_activity_booking">Workout Booking</string>
     <string name="title_activity_about_us">About Us</string>

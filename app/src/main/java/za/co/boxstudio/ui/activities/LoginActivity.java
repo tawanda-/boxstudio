@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.preference.PreferenceManager;
 
 import android.util.Log;
@@ -48,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final CoordinatorLayout layout = findViewById(R.id.layoutLogin);
         final Button loginButton = findViewById(R.id.buttonLoginSubmit);
         //final Button registerButton = findViewById(R.id.buttonRegister);
         final TextView emailTextView = findViewById(R.id.textViewLoginEmail);
@@ -83,8 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Member> call, Throwable t) {
                         t.printStackTrace();
-
-
+                        Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
                     }
                 });
             }

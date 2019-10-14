@@ -54,6 +54,25 @@ public class Member {
     @Expose
     public String password;
 
+    public Member(){
+        this.memberID = "";
+        this.memberName = "";
+        this.memberSurname = "";
+        this.membershipID = "";
+        this.memberContact = "";
+        this.memberEmail = "";
+        this.memberAddress = "";
+        this.memberGender = "";
+        this.approvedYN = "";
+        this.memberDOB = "";
+        this.approvedBy = "";
+        this.approvalDate = "";
+        this.deletedYN = "";
+        this.dateDeletedD = "";
+        this.deletedByC = "";
+        this.password = "";
+    }
+
     public Member(String memberID, String memberName, String memberSurname, String memberEmail, String password) {
         this.memberID = memberID;
         this.memberName = memberName;
