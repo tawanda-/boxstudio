@@ -73,7 +73,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewLoginPassword"
                 app:layout_constraintVertical_bias="0.161" />
 
-            <Button
+            <!--Button
                 android:id="@+id/buttonRegister"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
@@ -81,7 +81,7 @@
                 android:background="@drawable/box_studio_button_style"
                 android:text="@string/action_register"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" /-->
 
             <EditText
                 android:id="@+id/textViewForgotPassword"

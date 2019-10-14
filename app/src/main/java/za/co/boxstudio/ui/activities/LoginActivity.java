@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final Button loginButton = findViewById(R.id.buttonLoginSubmit);
-        final Button registerButton = findViewById(R.id.buttonRegister);
+        //final Button registerButton = findViewById(R.id.buttonRegister);
         final TextView emailTextView = findViewById(R.id.textViewLoginEmail);
         final TextView passwordTextView = findViewById(R.id.textViewLoginPassword);
 
@@ -82,11 +83,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Member> call, Throwable t) {
                         t.printStackTrace();
+
+
                     }
                 });
             }
         });
 
+        /*
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
+         */
     }
 
     @Override

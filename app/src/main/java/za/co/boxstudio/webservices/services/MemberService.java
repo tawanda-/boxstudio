@@ -1,10 +1,12 @@
 package za.co.boxstudio.webservices.services;
 
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -21,4 +23,8 @@ public interface MemberService {
     Call<Member> register(@Field("memberEmail") String memberEmail, @Field("memberName") String memberName,
                                 @Field("memberSurname") String memberSurname, @Field("membershipID") String membershipID,
                                 @Field("memberID") String memberID, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("booking/")
+    Call<Object> booking(@FieldMap Map<String, String> field);
 }
