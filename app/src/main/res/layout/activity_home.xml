@@ -28,7 +28,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/profileButton"
@@ -44,7 +44,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/scheduleButton"
@@ -60,7 +60,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/bookingButton"
@@ -76,7 +76,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/aboutUsButton"
@@ -92,7 +92,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/logoutButton"
@@ -108,7 +108,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
