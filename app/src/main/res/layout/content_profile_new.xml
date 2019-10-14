@@ -35,20 +35,20 @@
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
-            <!--de.hdodenhof.circleimageview.CircleImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="45dp"
                 android:src="@drawable/profile_image_2"
-                tools:src="@drawable/profile_image_2" /-->
-            <ImageView
+                tools:src="@drawable/profile_image_2" />
+            <!--ImageView
                 android:id="@+id/imageViewProfileIcon"
                 android:layout_width="match_parent"
                 android:layout_height="249dp"
                 android:contentDescription="@string/user_emoji"
-                app:srcCompat="@mipmap/ic_launcher_prof" />
+                app:srcCompat="@mipmap/ic_launcher_prof" /-->
         </LinearLayout>
 
         <LinearLayout
@@ -70,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:drawablePadding="5dp"
                 android:drawableStart="@drawable/ic_action_user"
                 android:paddingStart="20dp"
                 android:textStyle="bold" />
@@ -83,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:drawableStart="@drawable/about_icon_email"
+                android:drawablePadding="5dp"
                 android:paddingStart="20dp"
                 android:textStyle="bold" />
             <Space
@@ -95,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:drawableStart="@drawable/ic_action_phone"
+                android:drawablePadding="5dp"
                 android:paddingStart="20dp"
                 android:textStyle="bold" />
             <Space
