@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         final TextView nameTextView = findViewById(R.id.textViewProfileName);
         final TextView emailTextView = findViewById(R.id.textViewProfileEmail);
+        final TextView phoneTextView = findViewById(R.id.textViewProfilePhone);
         final TextView usernameNameTextView = findViewById(R.id.textViewProfileUsername);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,6 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
         nameTextView.setText(name);
         emailTextView.setText(member.getMemberEmail());
         usernameNameTextView.setText(member.getMemberID());
+        phoneTextView.setText(member.getMemberContact());
 
     }
 }
