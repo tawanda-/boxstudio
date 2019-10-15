@@ -56,10 +56,10 @@ public class ScheduleActivity extends AppCompatActivity {
         mAdapter = new ScheduleAdapter(ScheduleActivity.this, dataList );
         layoutManager = new LinearLayoutManager(ScheduleActivity.this);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                DividerItemDecoration.HORIZONTAL);
+        /*DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                DividerItemDecoration.HORIZONTAL);*/
 
-        recyclerView.addItemDecoration(dividerItemDecoration);
+        //recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setLayoutManager(layoutManager);
 

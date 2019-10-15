@@ -41,14 +41,8 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="45dp"
-                android:src="@drawable/profile_image_2"
-                tools:src="@drawable/profile_image_2" />
-            <!--ImageView
-                android:id="@+id/imageViewProfileIcon"
-                android:layout_width="match_parent"
-                android:layout_height="249dp"
-                android:contentDescription="@string/user_emoji"
-                app:srcCompat="@mipmap/ic_launcher_prof" /-->
+                android:src="@drawable/placeholder_profile_image"
+                tools:src="@drawable/placeholder_profile_image" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:drawableStart="@drawable/about_icon_email"
+                android:drawableStart="@drawable/ic_email_black_18"
                 android:drawablePadding="5dp"
                 android:paddingStart="20dp"
                 android:textStyle="bold" />

@@ -1,25 +1,20 @@
 package za.co.boxstudio.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 
 import za.co.boxstudio.R;
 import za.co.boxstudio.webservices.models.Member;
 
 public class HomeActivity extends AppCompatActivity {
-
-    ViewPager pager;
-    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,21 +75,6 @@ public class HomeActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-/*
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-
-        pager = findViewById(R.id.pager);
-        tabLayout = findViewById(R.id.tabs);
-
-        pager.setAdapter(new MyAdapter(getSupportFragmentManager()));
-        tabLayout.setupWithViewPager(pager);
-
-        pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
- */
     }
 
     @Override
@@ -102,66 +82,4 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
 
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        Intent intent;
-
-        switch(item.getItemId()){
-            case R.id.action_profile:
-                intent = new Intent(this, ProfileActivity.class);
-                startActivity(intent);
-            case R.id.action_contact_us:
-                return true;
-            case R.id.action_settings:
-                intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public class MyAdapter extends FragmentPagerAdapter {
-        private String[] titles = {
-                getString(R.string.title_schedule_fragment),
-                getString(R.string.title_booking_fragment)};
-
-        public MyAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch(position){
-                case 0:{
-                    return ScheduleFragment.newInstance(position);
-                }
-                case 1:{
-                    return BookingFragment.newInstance(position);
-                }
-            }
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return titles.length;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
-    }
-
- */
 }

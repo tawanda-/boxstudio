@@ -63,19 +63,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.boxstudio.ui.activities.HomeActivity" />
         </activity>
-        <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:parentActivityName=".ui.activities.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="za.co.boxstudio.ui.activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".ui.activities.LauncherActivity"
-            android:label="@string/title_activity_launcher"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <uses-library android:name="com.google.android.maps" />
     </application>
