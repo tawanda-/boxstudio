@@ -163,7 +163,7 @@
             android:layout_margin="8dp"
             android:background="@drawable/shape"
             android:text="@string/submit"
-            android:textColor="#FF1744"
+            android:textColor="@color/boxStudioRed"
             android:textSize="18sp"
             android:textStyle="bold" />
 

@@ -52,7 +52,6 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/boxStudioRed"
             android:textCursorDrawable="@drawable/box_studio_cursor"
-            android:backgroundTint="@color/boxStudioRed"
             android:textSize="24sp" />
 
         <Space
@@ -72,7 +71,6 @@
             android:inputType="textPassword"
             android:textColor="@color/boxStudioRed"
             android:textCursorDrawable="@drawable/box_studio_cursor"
-            android:backgroundTint="@color/boxStudioRed"
             android:textSize="24sp" />
 
         <Space
@@ -87,6 +85,8 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/box_studio_button_style"
             android:text="@string/action_sign_in"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
 
