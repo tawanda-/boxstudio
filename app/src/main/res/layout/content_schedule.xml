@@ -8,9 +8,29 @@
     tools:context=".ui.activities.ScheduleActivity"
     tools:showIn="@layout/activity_schedule">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <TextView
+        android:id="@+id/textViewScheduleHeader"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/schedule_recycler"/>
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/schedule_heading"
+        android:textColor="@color/boxStudioRed"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schedule_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewScheduleHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

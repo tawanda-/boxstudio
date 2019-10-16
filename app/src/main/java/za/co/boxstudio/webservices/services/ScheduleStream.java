@@ -19,6 +19,6 @@ public class ScheduleStream {
         return service.getSchedules()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .timeout(10, TimeUnit.SECONDS);
+                .timeout(120, TimeUnit.SECONDS);
     }
 }
