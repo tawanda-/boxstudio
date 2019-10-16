@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.TextView;
 
 import za.co.boxstudio.R;
@@ -27,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView emailTextView = findViewById(R.id.textViewProfileEmail);
         final TextView phoneTextView = findViewById(R.id.textViewProfilePhone);
         final TextView usernameNameTextView = findViewById(R.id.textViewProfileUsername);
+        final TextView addressTextView = findViewById(R.id.textViewProfileAddress);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,7 +44,16 @@ public class ProfileActivity extends AppCompatActivity {
         nameTextView.setText(name);
         emailTextView.setText(member.getMemberEmail());
         usernameNameTextView.setText(member.getMemberID());
-        phoneTextView.setText(member.getMemberContact());
+        if(member.getMemberContact().equals("")){
+            phoneTextView.setVisibility(View.GONE);
+        }else{
+            phoneTextView.setText(member.getMemberContact());
+        }
 
+        if(member.getMemberAddress().equals("")){
+            addressTextView.setVisibility(View.GONE);
+        }else{
+            addressTextView.setText(member.getMemberAddress());
+        }
     }
 }

@@ -38,29 +38,35 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     @Override
     public void onBindViewHolder(ScheduleViewHolder holder, int position) {
 
-        String title = dataList.get(position).getActvityName();
+        String h = dataList.get(position).getActvityName();
         String staff = "Trainer: "+dataList.get(position).getStaffName()+" "+dataList.get(position).getStaffSurname();
         String d = "Date:     "+dataList.get(position).getScheduleDay();
         String t = "Time:     "+dataList.get(position).getStartTime()+" - "+dataList.get(position).getEndTime();
         String v = "Venue:   "+dataList.get(position).getFacilityName();
 
-        //android.text.style.StyleSpan styleSpan = new android.text.style.StyleSpan(android.graphics.Typeface.BOLD);
+        android.text.style.StyleSpan styleSpan = new android.text.style.StyleSpan(android.graphics.Typeface.BOLD);
+
+        SpannableStringBuilder title = new SpannableStringBuilder(h);
+        title.setSpan(styleSpan, 0, h.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         SpannableStringBuilder name = new SpannableStringBuilder(staff);
-        name.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        name.setSpan(styleSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        SpannableStringBuilder date = new SpannableStringBuilder(d);
+        date.setSpan(styleSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         SpannableStringBuilder time = new SpannableStringBuilder(t);
-        name.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        time.setSpan(styleSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         SpannableStringBuilder venue = new SpannableStringBuilder(v);
-        name.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        venue.setSpan(styleSpan, 0, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         holder.line1.setText(title);
-        holder.line2.setText(staff);
-        holder.line3.setText(d);
-        holder.line4.setText(t);
-        holder.line5.setText(v);
+        holder.line2.setText(name);
+        holder.line3.setText(date);
+        holder.line4.setText(time);
+        holder.line5.setText(venue);
 
     }
 

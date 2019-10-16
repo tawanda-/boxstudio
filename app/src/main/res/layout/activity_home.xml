@@ -32,22 +32,6 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/profileButton"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:background="@drawable/shape"
-            android:text="@string/action_button_profile"
-            android:textAllCaps="false"
-            android:textColor="@color/boxStudioRed"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <Button
             android:id="@+id/scheduleButton"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -69,6 +53,23 @@
             android:layout_height="50dp"
             android:background="@drawable/shape"
             android:text="@string/action_button_booking"
+            android:textAllCaps="false"
+            android:textColor="@color/boxStudioRed"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/profileButton"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape"
+            android:text="@string/action_button_profile"
             android:textAllCaps="false"
             android:textColor="@color/boxStudioRed"
             android:textSize="18sp"
