@@ -104,6 +104,8 @@
     <string name="error_messge">There was a problem, please try again.</string>
 
     <string name="content_description">box studio image</string>
+    <string name="select_activities">Please select activity(ies)</string>
+    <string name="booking_fill_form">Please fill in the form</string>
 
 
 

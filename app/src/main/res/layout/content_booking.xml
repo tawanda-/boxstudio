@@ -8,85 +8,159 @@
     tools:context=".ui.activities.BookingActivity"
     tools:showIn="@layout/activity_booking">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewBookingHeader"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/graylight"
-        android:gravity="center"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/booking_fill_form"
+        android:textColor="@color/boxStudioRed"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBooking"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookingHeader">
 
         <EditText
             android:id="@+id/editTextBookingPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone_red"
+            android:drawablePadding="8dp"
             android:hint="@string/enter_phone_number"
+            android:importantForAutofill="no"
             android:inputType="phone"
             android:singleLine="true"
-            android:layout_margin="5dp"
+            android:textColor="@color/boxStudioRed"
+            android:textCursorDrawable="@drawable/box_studio_cursor"
+            android:textSize="18sp"
             android:visibility="visible" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <EditText
             android:id="@+id/editTextBookingEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:drawableStart="@drawable/ic_email_red"
+            android:drawablePadding="8dp"
             android:hint="@string/enter_email"
-            android:layout_margin="5dp"
-            android:inputType="textEmailAddress" />
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@color/boxStudioRed"
+            android:textCursorDrawable="@drawable/box_studio_cursor"
+            android:textSize="18sp"
+            android:visibility="visible" />
 
-        <CheckBox
-            android:id="@+id/checkBoxBookingKarate"
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:id="@+id/textViewBookingActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/karate" />
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="@string/select_activities"
+            android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBoxBookingYoga"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/yoga" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/checkBoxBookingStretch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/stretch" />
+            <CheckBox
+                android:id="@+id/checkBoxBookingKarate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/karate"
+                android:textAlignment="viewStart"
+                android:textColor="@color/boxStudioRed"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBoxBookingCardio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/cardio" />
+            <CheckBox
+                android:id="@+id/checkBoxBookingYoga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yoga"
+                android:textAlignment="viewStart"
+                android:textColor="@color/boxStudioRed"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBoxBookingBoxing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/boxing" />
+            <CheckBox
+                android:id="@+id/checkBoxBookingStretch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stretch"
+                android:textAlignment="viewStart"
+                android:textColor="@color/boxStudioRed"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBookingCardio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cardio"
+                android:textAlignment="viewStart"
+                android:textColor="@color/boxStudioRed"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBookingBoxing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boxing"
+                android:textAlignment="viewStart"
+                android:textColor="@color/boxStudioRed"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <EditText
             android:id="@+id/editTextBookingNotes"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_margin="5dp"
-            android:ems="10"
+            android:layout_height="wrap_content"
             android:gravity="start|top"
             android:hint="@string/additional_notes"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:isScrollContainer="false"
+            android:lines="4"
+            android:maxLines="5"
+            android:textColor="@color/boxStudioRed"
+            android:textCursorDrawable="@drawable/box_studio_cursor"
+            android:importantForAutofill="no" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="8dp" />
 
         <Button
             android:id="@+id/buttonBookingSubmit"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
             android:background="@drawable/shape"
             android:text="@string/submit"
             android:textColor="#FF1744"
