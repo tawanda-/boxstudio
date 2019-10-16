@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         //final Button registerButton = findViewById(R.id.buttonRegister);
         final TextView emailTextView = findViewById(R.id.textViewLoginEmail);
         final TextView passwordTextView = findViewById(R.id.textViewLoginPassword);
+        final View progressBar = findViewById(R.id.viewProgressBar);
 
         final Retrofit client = ClientSingleton.getRetrofitInstance();
         final MemberService service = client.create(MemberService.class);
@@ -60,32 +61,52 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Call<Member> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
-                call.enqueue(new Callback<Member>() {
+                if(progressBar.getVisibility() == View.GONE) {
+                    progressBar.setVisibility(View.VISIBLE);
+                }
 
-                    @Override
-                    public void onResponse(Call<Member> call, Response<Member> response) {
-
-                        Log.d(this.getClass().getSimpleName(), new Gson().toJson(response.body()));
-
-                        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
-                        SharedPreferences.Editor editor = sharedPref.edit();
-                        editor.putBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), true);
-                        editor.putString(getString(R.string.box_studio_shared_pref_user), new Gson().toJson(response.body()));
-                        editor.commit();
-
-
-                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
+                if(emailTextView.getText().toString().equals("") || passwordTextView.getText().toString().equals("") ){
+                    if (progressBar.getVisibility() == View.VISIBLE) {
+                        progressBar.setVisibility(View.GONE);
                     }
+                    Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
+                }else {
 
-                    @Override
-                    public void onFailure(Call<Member> call, Throwable t) {
-                        t.printStackTrace();
-                        Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
-                    }
-                });
+                    Call<Member> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
+                    call.enqueue(new Callback<Member>() {
+
+                        @Override
+                        public void onResponse(Call<Member> call, Response<Member> response) {
+
+                            Log.d(this.getClass().getSimpleName(), new Gson().toJson(response.body()));
+
+                            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), true);
+                            editor.putString(getString(R.string.box_studio_shared_pref_user), new Gson().toJson(response.body()));
+                            editor.commit();
+
+
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                            if (progressBar.getVisibility() == View.VISIBLE) {
+                                progressBar.setVisibility(View.GONE);
+                            }
+
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Member> call, Throwable t) {
+                            t.printStackTrace();
+                            if (progressBar.getVisibility() == View.VISIBLE) {
+                                progressBar.setVisibility(View.GONE);
+                            }
+                            Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
+                        }
+                    });
+                }
             }
         });
 

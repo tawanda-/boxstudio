@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/content_login" />
+    <include layout="@layout/content_login" android:visibility="visible"/>
+    <include android:id="@+id/viewProgressBar" layout="@layout/progress_bar" android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
