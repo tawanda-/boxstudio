@@ -23,10 +23,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import za.co.boxstudio.R;
 import za.co.boxstudio.webservices.ClientSingleton;
+import za.co.boxstudio.webservices.models.Login;
 import za.co.boxstudio.webservices.models.Member;
 import za.co.boxstudio.webservices.services.MemberService;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private Retrofit client = ClientSingleton.getRetrofitInstance();
+    private MemberService service = client.create(MemberService.class);
+    private Member member;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         final TextView passwordTextView = findViewById(R.id.textViewLoginPassword);
         final View progressBar = findViewById(R.id.viewProgressBar);
 
-        final Retrofit client = ClientSingleton.getRetrofitInstance();
-        final MemberService service = client.create(MemberService.class);
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,33 +74,63 @@ public class LoginActivity extends AppCompatActivity {
                     Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
                 }else {
 
-                    Call<Member> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
-                    call.enqueue(new Callback<Member>() {
+                    Call<Login> call = service.login(emailTextView.getText().toString(), passwordTextView.getText().toString());
+                    call.enqueue(new Callback<Login>() {
 
                         @Override
-                        public void onResponse(Call<Member> call, Response<Member> response) {
+                        public void onResponse(Call<Login> call, Response<Login> response) {
 
                             Log.d(this.getClass().getSimpleName(), new Gson().toJson(response.body()));
 
-                            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
-                            SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.putBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), true);
-                            editor.putString(getString(R.string.box_studio_shared_pref_user), new Gson().toJson(response.body()));
-                            editor.commit();
+                            Login login = response.body();
 
+                            try {
+                                Call<Member> call2 = service.getMember(login.userName);
+                                call2.enqueue(new Callback<Member>() {
 
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    @Override
+                                    public void onResponse(Call<Member> call, Response<Member> response) {
+                                        member = response.body();
 
-                            if (progressBar.getVisibility() == View.VISIBLE) {
-                                progressBar.setVisibility(View.GONE);
+                                        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                                        SharedPreferences.Editor editor = sharedPref.edit();
+                                        editor.putBoolean(getString(R.string.box_studio_shared_pref_user_logged_in), true);
+                                        editor.putString(getString(R.string.box_studio_shared_pref_user), new Gson().toJson(member));
+                                        editor.commit();
+
+                                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                                        if (progressBar.getVisibility() == View.VISIBLE) {
+                                            progressBar.setVisibility(View.GONE);
+                                        }
+
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Member> call, Throwable t) {
+                                        t.printStackTrace();
+                                        if (progressBar.getVisibility() == View.VISIBLE) {
+                                            progressBar.setVisibility(View.GONE);
+                                        }
+                                        Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
+                                    }
+                                });
+
+                            }catch (Exception e){
+
+                                e.printStackTrace();
+                                if (progressBar.getVisibility() == View.VISIBLE) {
+                                    progressBar.setVisibility(View.GONE);
+                                }
+                                Snackbar.make(layout, R.string.error_messge, Snackbar.LENGTH_LONG).show();
+
                             }
-
-                            startActivity(intent);
-                            finish();
                         }
 
                         @Override
-                        public void onFailure(Call<Member> call, Throwable t) {
+                        public void onFailure(Call<Login> call, Throwable t) {
                             t.printStackTrace();
                             if (progressBar.getVisibility() == View.VISIBLE) {
                                 progressBar.setVisibility(View.GONE);

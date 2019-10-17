@@ -6,14 +6,20 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
+import za.co.boxstudio.webservices.models.Login;
 import za.co.boxstudio.webservices.models.Member;
 
 public interface MemberService {
 
+    @GET("member")
+    Call<Member> getMember(@Query("memberid") String id);
+
     @FormUrlEncoded
     @POST("login/")
-    Call<Member> login(@Field("memberId") String memberId, @Field("password") String password);
+    Call<Login> login(@Field("memberId") String memberId, @Field("password") String password);
 
     @FormUrlEncoded
     @POST("register/")
