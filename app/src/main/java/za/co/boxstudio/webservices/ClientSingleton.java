@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ClientSingleton {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "https://boxstudio.esikolweni.co.za";
+    private static final String BASE_URL = "http://boxstudioplus.co.za/mobi_index.php/";
 
     private ClientSingleton(){ }
 
